@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="feedbackstyle.css">
+</head>
+<body>
+    <div id="navigation">
+        <div id="menu" onclick="onClickMenu()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+        <ul class="nav" id="nav">
+            <li><a href="https://www.chitkara.edu.in/" id="Home" onclick="Home('Home')">Home</a></li>
+            <li><a href="https://www.chitkara.edu.in/overview/campus-leadership/" id="About Us" onclick="AboutUs('About Us')">About Us</a></li>
+            <li><a href="https://www.chitkara.edu.in/blogs/" id="Blog" onclick="Blog('Blog')">Blog</a></li>
+            <li><a href="https://www.chitkara.edu.in/can/" id="Alumni" onclick="Alumni('Alumni')">Alumni</a></li>
+            <li><a href="https://www.chitkara.edu.in/admissions/admission-helpline/" id="Contact Us" onclick="ContactUs('Contact Us')">Contact Us</a></li>
+        </ul>
+    </div>   
+    <div class="container">
+        <div class="container1">
+        <header class="header">
+          <h1 id="title" class="text-center" >Thank You For Your Precious Time</h1>
+        </header>
+        <br/>
+        <br/>
+        <h1>
+          <a href="https://www.chitkara.edu.in/" id="ContinueChitkara" onclick="ContinueChitkara('Continue Chitkara')">
+              <button class="button1">Continue Chitkara</button>
+          </a>
+        </h1>
+        </div>
+    </div>
+    
+    <script>
+      function onClickMenu(){
+          document.getElementById("menu").classList.toggle("icon");
+          document.getElementById("nav").classList.toggle("change");
+      }
+
+      function Home(action) {
+          localStorage.setItem('Home', action);
+      }
+      var storedAction = localStorage.getItem('Home');
+      console.log(storedAction);
+
+      function AboutUs(action) {
+          localStorage.setItem('About Us', action);
+      }
+      var storedAction = localStorage.getItem('About Us');
+      console.log(storedAction);
+
+      function Blog(action) {
+          localStorage.setItem('Blog', action);
+      }
+      var storedAction = localStorage.getItem('Blog');
+      console.log(storedAction);
+
+      function Alumni(action) {
+          localStorage.setItem('Alumni', action);
+      }
+      var storedAction = localStorage.getItem('Alumni');
+      console.log(storedAction);
+
+      function ContactUs(action) {
+          localStorage.setItem('Contact Us', action);
+      }
+      var storedAction = localStorage.getItem('Contact Us');
+      console.log(storedAction);
+
+      function ContinueChitkara(action) {
+          localStorage.setItem('Continue Chitkara', action);
+      }
+      var storedAction = localStorage.getItem('Continue Chitkara');
+      console.log(storedAction);
+
+    </script>
+</body>
+</html>
+    

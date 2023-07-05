@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Chitkara Survey Form</h1>
+      </header>
+      
+      <form id="survey-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required="">
+          <br/>
+          <label for="age">Age<span class="clue">(optional)</span></label>
+          <input type="number" name="age" id="age" min="10" max="99" class="form-control" placeholder="Age">
+          <br/>
+          <label for="email">Email <span class="clue">(*write the official Chitkara Email Id if you are a student)</span></label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required="">
+          <br/>
+          <label for="contact-number">Contact Number<span class="clue">(optional)</span></label>
+          <input type="tel" name="contact-number" id="contact-number" class="form-control" placeholder="Contact Number">
+          <br/>
+        </div>
+      </form>
+      <br/>
+
+      <a href="role.html" onclick="save()">
+        <button type="next" id="next" class="next-button"><strong>Next</strong></button>
+      </a>
+      <br/>
+
+      <script>
+        function save(){
+          let name=document.getElementById('name').value;
+          let contact=document.getElementById('contact-number').value;
+          let age=document.getElementById('age').value;
+          let email=document.getElementById('email').value;
+          localStorage.setItem('name',name);
+          localStorage.setItem('contact',contact);
+          localStorage.setItem('age',age);
+          localStorage.setItem('email',email);
+        }
+      </script>
+      <br/>
+      <br/>
+    </div>
+</body>
+</html>

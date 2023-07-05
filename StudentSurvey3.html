@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center">Student Stress Survey</h1>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <h2>Question 1 of </h2>
+                <p>
+                    <strong>Your current class level is:</strong>
+                </p>
+                <input type="radio" id="freshman" name="Class" value="freshman" onclick="saveClass('freshman')" required> 
+                <label for="freshman" style="display: inline-block;">Freshman (undergraduate)</label>
+                <br />
+                <input type="radio" id="sophomore" name="Class" value="sophomore" onclick="saveClass('sophomore')" required>
+                <label for="sophomore" style="display: inline-block;">Sophomore (undergraduate)</label>
+                <br />
+                <input type="radio" id="junior" name="Class" value="junior" onclick="saveClass('junior')" required>
+                <label for="junior" style="display: inline-block;">Junior (undergraduate)</label>
+                <br />
+                <input type="radio" id="senior" name="Class" value="senior" onclick="saveClass('senior')" required>
+                <label for="senior" style="display: inline-block;">Senior (undergraduate)</label>
+                <br />
+                <input type="radio" id="graduate" name="rating" value="graduate" onclick="saveRating('graduate')" required>
+                <label for="graduate" style="display: inline-block;">Graduate Student</label>
+                <br />
+                <input type="radio" id="other" name="rating" value="other" onclick="saveRating('other')" required>
+                <label for="other" style="display: inline-block;">other</label>
+                <br />
+
+                <h2>Question 2 of </h2>
+                <p>
+                    <strong>Stressed do you feel on a daily basis during the academic year?</strong> 
+                </p>
+                <input type="radio" id="Stressed1" name="Stressed" value="Extremely Stressed" onclick="SaveEvaluation('Extremely Stressed')" required/>
+                <label for="Stressed1" style="display: inline-block">Extremely Stressed</label>
+                <br />
+                <input type="radio" id="Stressed1" name="Stressed" value="Very Stressed" onclick="SaveEvaluation('Very Stressed')" required/>
+                <label for="Stressed2" style="display: inline-block">Very Stressed</label>
+                <br />
+                <input type="radio" id="Stressed1" name="Stressed" value="Little Stressed" onclick="SaveEvaluation('Stressed')" required/>
+                <label for="Stressed3" style="display: inline-block">Little Stressed</label>
+                <br />
+                <input type="radio" id="Stressed1" name="Stressed" value="Neutral" onclick="SaveEvaluation('Neutral')" required/>
+                <label for="Stressed4" style="display: inline-block">Neutral</label>
+                <br />
+
+                <h2>Question 3 of </h2>
+                <p>
+                    <strong>What are the usual causes of stress in your life? </strong>
+                    <br/>
+                    <small><small>(Select all that apply)</small></small>
+                </p>
+                <input type="checkbox" id="cause1" name="cause1" value="Studies Issues" onclick="SaveCause1('Studies Issues')" required/>
+                <label for="cause1" style="display: inline-block">Studies Issues</label>
+                <br />
+                <input type="checkbox" id="cause2" name="cause2" value="Financial Issues" onclick="SaveCause2('Financial Issues')" required/>
+                <label for="cause2" style="display: inline-block">Financial Issues</label>
+                <br />
+                <input type="checkbox" id="cause3" name="cause3" value="Family Issues" onclick="SaveCause3('Family Issues')" required/>
+                <label for="cause3" style="display: inline-block">Family Issues</label>
+                <br />
+                <input type="checkbox" id="cause4" name="cause4" value="Health Issues" onclick="SaveCause4('Health Issues')" required/>
+                <label for="cause4" style="display: inline-block">Health Issues</label>
+                <br />
+                <input type="checkbox" id="cause5" name="cause5" value="My Involvement in Clubs" onclick="SaveCause5('My Involvement in Clubs')" required/>
+                <label for="cause5" style="display: inline-block">My Involvement in Clubs</label>
+                <br />
+                <input type="checkbox" id="cause6" name="cause6" value="Peer Pressure" onclick="SaveCause6('Peer Pressure')" required/>
+                <label for="cause6" style="display: inline-block">Peer Pressure</label>
+                <br />
+                <input type="checkbox" id="cause7" name="cause7" value="Other" onclick="SaveCause7('Other')" required/>
+                <label for="cause7" style="display: inline-block">Other</label>
+                <br />
+
+                <h2>Question 4 of </h2>
+                <p>
+                    <strong>How do you usually experience stress?</strong> <small>(in the situations selected from the list above)</small>
+                    <br/>
+                    <br/>
+                    Please, describe in few words the physical sensations and the feelings you encounter when you call yourself as feeling stressed.
+                    <br/>
+                    Also describe how you deal with stress in such situations.
+                </p>
+                <textarea id="comment1" class="input-textarea" name="comment1" placeholder="Enter your comment here..." onchange="saveComment1()"></textarea>
+                <br/>
+
+                <h2>Question 5 of </h2>
+                <p>
+                    <strong>How hard is to handle your stress?</strong>
+                </p>
+                <input type="radio" id="handling1" name="handling" value="Not at all" onclick="SaveHandling('Not at all')" required/>
+                <label for="handling1" style="display: inline-block">Not at all</label>
+                <br />
+                <input type="radio" id="handling1" name="handling" value="A little bit" onclick="SaveHandling('A little bit')" required/>
+                <label for="handling2" style="display: inline-block">A little bit</label>
+                <br />
+                <input type="radio" id="handling1" name="handling" value="Almost" onclick="SaveHandling('Almost')" required/>
+                <label for="handling3" style="display: inline-block">Almost</label>
+                <br />
+
+                <h2>Question 6 of </h2>
+                <p>
+                    <strong>
+                        Is there something our university can do to help you deal with your stress?
+                    </strong>
+                    <br/>
+                    Please, describe in a few words.
+                </p>
+                <textarea id="comment2" class="input-textarea" name="comment2" placeholder="Enter your comment here..." onchange="saveComment2()"></textarea>
+                <br/>
+            </div>
+        </form>
+        <br/>
+        <h1>
+            <a href="FeedbackPage.html" id="Submit" onclick="saveAction('Submit')">
+                <button class="button">Submit</button>
+            </a>
+        </h1>
+        <script>
+            // Q1
+            function saveClass(value) {
+                localStorage.setItem('Class', value);
+            }
+            var Class = localStorage.getItem('Class');
+            console.log(Class);
+
+            //Q2
+            function SaveEvaluation(value) {
+                localStorage.setItem('Stressed', value);
+            }
+            var Stressed = localStorage.getItem('Stressed');
+            console.log(Stressed);
+            
+            //Q3
+            function SaveCause1(value) {
+                localStorage.setItem('Cause1', value);
+            }
+            var Cause1 = localStorage.getItem('Cause1');
+            console.log(Cause1);
+
+            function SaveCause2(value) {
+                localStorage.setItem('Cause2', value);
+            }
+            var Cause2 = localStorage.getItem('Cause2');
+            console.log(Cause2);
+            
+            function SaveCause3(value) {
+                localStorage.setItem('Cause3', value);
+            }
+            var Cause3 = localStorage.getItem('Cause3');
+            console.log(Cause3);
+
+            function SaveCause4(value) {
+                localStorage.setItem('Cause4', value);
+            }
+            var Cause4 = localStorage.getItem('Cause4');
+            console.log(Cause4);
+
+            function SaveCause5(value) {
+                localStorage.setItem('Cause5', value);
+            }
+            var Cause5 = localStorage.getItem('Cause5');
+            console.log(Cause5);
+
+            function SaveCause6(value) {
+                localStorage.setItem('Cause6', value);
+            }
+            var Cause6 = localStorage.getItem('Cause6');
+            console.log(Cause6);
+
+            function SaveCause7(value) {
+                localStorage.setItem('Cause7', value);
+            }
+            var Cause7 = localStorage.getItem('Cause7');
+            console.log(Cause7);
+            
+            //Q4
+            function saveComment1() {
+                var comment1 = document.getElementById('comment1').value;
+                localStorage.setItem('userComment1', comment1);
+            }
+            var storedComment1 = localStorage.getItem('userComment1');
+            console.log(storedComment1);
+
+            //Q5
+            function SaveHandling(value) {
+                localStorage.setItem('handling', value);
+            }
+            var handling = localStorage.getItem('handling');
+            console.log(handling);
+
+            //Q6
+            function saveComment2() {
+                var comment2 = document.getElementById('comment2').value;
+                localStorage.setItem('userComment2', comment2);
+            }
+            var storedComment2 = localStorage.getItem('userComment2');
+            console.log(storedComment2);
+
+            //Submit
+            function saveAction(action) {
+                localStorage.setItem('Submit', action);
+            }
+            var storedAction = localStorage.getItem('Submit');
+            console.log(storedAction);
+        </script>
+    </div>
+</body>
+</html>

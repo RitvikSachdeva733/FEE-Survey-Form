@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center">Student Survey</h1>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <h2>Question 1 of 4</h2>
+                <label for="course-name">Please mention the course name that you are pursuing in our university</label>
+                <input type="text" name="course-name" id="course-name" class="form-control" placeholder="Enter your course name" required="">
+                <br/>
+                
+                <h2>Question 2 of 4</h2>
+                <p>
+                    <strong>Your overall experience with our college, on a scale from 0-10 how likely are you to recommend this college to your family and friends?</strong>  
+                    <br/>
+                    <small><small>(0-Very Unlikely; 10-Very Likely.)</small></small>
+                </p>
+                <br/>
+                <input type="radio" id="zero" name="rating" value="zero" onclick="saveRating('zero')" required> 
+                <label for="zero" style="display: inline-block;">0</label>
+                <br />
+                <input type="radio" id="one" name="rating" value="one" onclick="saveRating('one')" required>
+                <label for="one" style="display: inline-block;">1</label>
+                <br />
+                <input type="radio" id="two" name="rating" value="two" onclick="saveRating('two')" required>
+                <label for="two" style="display: inline-block;">2</label>
+                <br />
+                <input type="radio" id="three" name="rating" value="three" onclick="saveRating('three')" required>
+                <label for="three" style="display: inline-block;">3</label>
+                <br />
+                <input type="radio" id="four" name="rating" value="four" onclick="saveRating('four')" required>
+                <label for="four" style="display: inline-block;">4</label>
+                <br />
+                <input type="radio" id="five" name="rating" value="five" onclick="saveRating('five')" required>
+                <label for="five" style="display: inline-block;">5</label>
+                <br />
+                <input type="radio" id="six" name="rating" value="six" onclick="saveRating('six')" required>
+                <label for="six" style="display: inline-block;">6</label>
+                <br />
+                <input type="radio" id="seven" name="rating" value="seven" onclick="saveRating('seven')" required>
+                <label for="seven" style="display: inline-block;">7</label>
+                <br />
+                <input type="radio" id="eight" name="rating" value="eight" onclick="saveRating('eight')" required>
+                <label for="eight" style="display: inline-block;">8</label>
+                <br />
+                <input type="radio" id="nine" name="rating" value="nine" onclick="saveRating('nine')" required>
+                <label for="nine" style="display: inline-block;">9</label>
+                <br />
+                <input type="radio" id="ten" name="rating" value="ten" onclick="saveRating('ten')" required>
+                <label for="ten" style="display: inline-block;">10</label>
+                <br />
+                
+
+                <h2>Question 3 of 4</h2>
+                <p>
+                    <strong>How satisfied are you with the university campus and its facilities?</strong>
+                </p>
+                <br/>
+                <input type="radio" id="satisfied1" name="satisfied" value="Extremely Satisfied" onclick="SaveEvaluation('Extremely Satisfied')" required/>
+                <label for="satisfied1" style="display: inline-block">Extremely Satisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="satisfied" value="Very Satisfied" onclick="SaveEvaluation('Very Satisfied')" required/>
+                <label for="satisfied2" style="display: inline-block">Very satisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="satisfied" value="Satisfied" onclick="SaveEvaluation('Satisfied')" required/>
+                <label for="satisfied3" style="display: inline-block">Satisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="satisfied" value="Neutral" onclick="SaveEvaluation('Neutral')" required/>
+                <label for="satisfied4" style="display: inline-block">Neutral</label>
+                <br />
+                <input type="radio" id="satisfied1" name="satisfied" value="Disatisfied" onclick="SaveEvaluation('Disatisfied')" required/>
+                <label for="satisfied5" style="display: inline-block">Disatisfied</label>
+                <br />
+                <input type="radio" id="satisfie1d" name="satisfied" value="Very Disatisfied" onclick="SaveEvaluation('Very Disatisfied')" required/>
+                <label for="satisfied6" style="display: inline-block">Very Disatisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="satisfied" value="Extremely Dissatisfied" onclick="SaveEvaluation('Extremely Dissatisfied')" required/>
+                <label for="satisfied7" style="display: inline-block">Extremely Dissatisfied</label>
+                <br />
+
+                <h2>Question 4 of 4</h2>
+                <p>
+                    <strong>What would you like to be improved in our university?</strong> 
+                    <br/>
+                    <br/>
+                    Please, describe in few words...
+                </p>
+                <textarea id="comment" class="input-textarea" name="comment" placeholder="Enter your comment here..." onchange="savecomment()"></textarea>
+                <br/>
+            </div>
+        </form>
+        <br/>
+
+        <a href="StudentSurvey2.html" onclick="save('Next')">
+            <button type="next" id="next" class="next-button"><strong>Next</strong></button>
+        </a>
+        <br/>
+
+        <script>
+            // Get the course name input field element
+            const courseNameInput = document.getElementById('course-name');
+            // Add an event listener to the input field
+            courseNameInput.addEventListener('input', function() {
+                // Get the entered course name
+                const courseName = courseNameInput.value;
+                // Save the course name in local storage
+                localStorage.setItem('courseName', courseName);
+            });
+
+            function saveRating(value) {
+                localStorage.setItem('rating', value);
+            }
+            var rating = localStorage.getItem('rating');
+            console.log(rating);
+
+            function SaveEvaluation(value) {
+                localStorage.setItem('satisfied', value);
+            }
+            var rating = localStorage.getItem('satisfied');
+            console.log(rating);
+
+            function savecomment() {
+                var comment = document.getElementById('comment').value;
+                localStorage.setItem('userComment', comment);
+            }
+            var storedComment = localStorage.getItem('userComment');
+            console.log(storedComment);
+
+            function save(action) {
+                localStorage.setItem('Next', action);
+            }
+            var storedAction = localStorage.getItem('Next');
+            console.log(storedAction);
+        </script>
+    </div>
+</body>
+</html>

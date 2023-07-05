@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">Your current role in the University?</h1>
+      </header>
+      <form id="survey-form">
+        <div class="form-group">
+          <p>
+            <strong>Select your role from the given below:</strong>
+          </p>
+            <br/>
+            <a href="StudentSurvey1.html" onclick="role1('Student')">
+              <button type="button" id="Student" class="button">Student</button>
+            </a>
+            <br/>
+            <br/>
+            <a href="FacultyMemberSurvey1.html" onclick="role2('Faculty Member')">
+              <button type="button" id="FacultyMember" class="button">Faculty Member</button>
+            </a>
+            <br/>
+            <br/>
+            <script>
+              function role1(a){
+              console.log(a);
+              localStorage.setItem('Student',a);
+              }
+          
+              function role2(b){
+              console.log(b);
+              localStorage.setItem('FacultyMember',b);
+              }
+            </script>
+        </div>
+      </form>
+</body>
+</html>

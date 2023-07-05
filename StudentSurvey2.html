@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center">Student Stress Survey</h1>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <p>
+                    Hello,<br/>
+                    You are invited to participate in our student stress survey. We know that higher education experience can be truly genuinely stressful sometimes, and we want to find out ways to support our students to cope with that more efficiently. The purpose of this questionnaire is to capture feedback about the stress you've experienced this academic year and how you've handled that.<br/><br/>
+                    Please, take some moments to reflect on each question addressed and try to be as sincere as possible. Your answers will remain confidential and they will be only used in finding ways to improve the academic experience of our students in the future.<br/><br/>
+                    You can start with the survey by clicking on the Continue button below. Thank you for your cooperation!
+                </p>
+            </div>
+        </form>
+        <br/>
+        <h1>
+            <a href="StudentSurvey3.html" id="Continue" onclick="Continue('Continue')">
+                <button class="button">Continue</button>
+            </a>
+        </h1>
+        <script>
+            function Continue(action) {
+                localStorage.setItem('Continue', action);
+            }
+            var storedAction = localStorage.getItem('Continue');
+            console.log(storedAction);
+        </script>
+    </div>
+</body>
+</html>
+
+
+
+
+<br />
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitkara Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center">Faculty Survey</h1>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <h2>Question 1 of 6</h2>
+                <label for="department-name">Please mention the department you are in.</label>
+                <input type="text" name="department-name" id="department-name" class="form-control" placeholder="Enter your department name" required="">
+                <br/>
+                
+                <h2>Question 2 of 6</h2>
+                <p>
+                    <strong>Your overall experience with our college, on a scale from 0-10 how likely are you to recommend this college to your family and friends?</strong>  
+                    <br/>
+                    <small><small>(0-Very Unlikely; 10-Very Likely.)</small></small>
+                </p>
+                <br/>
+                <input type="radio" id="zero" name="facultyrating" value="zero" onclick="SaveFacultyfacultyRating1('zero')" required> 
+                <label for="zero" style="display: inline-block;">0</label>
+                <br />
+                <input type="radio" id="one" name="facultyrating" value="one" onclick="SaveFacultyfacultyRating1('one')" required>
+                <label for="one" style="display: inline-block;">1</label>
+                <br />
+                <input type="radio" id="two" name="facultyrating" value="two" onclick="SaveFacultyfacultyRating1('two')" required>
+                <label for="two" style="display: inline-block;">2</label>
+                <br />
+                <input type="radio" id="three" name="facultyrating" value="three" onclick="SaveFacultyfacultyRating1('three')" required>
+                <label for="three" style="display: inline-block;">3</label>
+                <br />
+                <input type="radio" id="four" name="facultyrating" value="four" onclick="SaveFacultyfacultyRating1('four')" required>
+                <label for="four" style="display: inline-block;">4</label>
+                <br />
+                <input type="radio" id="five" name="facultyrating" value="five" onclick="SaveFacultyfacultyRating1('five')" required>
+                <label for="five" style="display: inline-block;">5</label>
+                <br />
+                <input type="radio" id="six" name="facultyrating" value="six" onclick="SaveFacultyfacultyRating1('six')" required>
+                <label for="six" style="display: inline-block;">6</label>
+                <br />
+                <input type="radio" id="seven" name="facultyrating" value="seven" onclick="SaveFacultyfacultyRating1('seven')" required>
+                <label for="seven" style="display: inline-block;">7</label>
+                <br />
+                <input type="radio" id="eight" name="facultyrating" value="eight" onclick="SaveFacultyfacultyRating1('eight')" required>
+                <label for="eight" style="display: inline-block;">8</label>
+                <br />
+                <input type="radio" id="nine" name="facultyrating" value="nine" onclick="SaveFacultyfacultyRating1('nine')" required>
+                <label for="nine" style="display: inline-block;">9</label>
+                <br />
+                <input type="radio" id="ten" name="facultyrating" value="ten" onclick="SaveFacultyfacultyRating1('ten')" required>
+                <label for="ten" style="display: inline-block;">10</label>
+                <br />
+                
+                <h2>Question 3 of 6</h2>
+                <p>
+                    <strong>How satisfied are you with the university campus and its facilities?</strong>
+                </p>
+                <br/>
+                <input type="radio" id="satisfied1" name="FacultyEvaluation" value="Extremely Satisfied" onclick="SaveFacultyEvaluation1('Extremely Satisfied')" required/>
+                <label for="satisfied1" style="display: inline-block">Extremely Satisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="FacultyEvaluation" value="Very Satisfied" onclick="SaveFacultyEvaluation1('Very Satisfied')" required/>
+                <label for="satisfied2" style="display: inline-block">Very satisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="FacultyEvaluation" value="Little Satisfied" onclick="SaveFacultyEvaluation1('Satisfied')" required/>
+                <label for="satisfied3" style="display: inline-block">Little Satisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="FacultyEvaluation" value="Neutral" onclick="SaveFacultyEvaluation1('Neutral')" required/>
+                <label for="satisfied4" style="display: inline-block">Neutral</label>
+                <br />
+                <input type="radio" id="satisfied1" name="FacultyEvaluation" value="Disatisfied" onclick="SaveFacultyEvaluation1('Disatisfied')" required/>
+                <label for="satisfied5" style="display: inline-block">Disatisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="FacultyEvaluation" value="Very Disatisfied" onclick="SaveFacultyEvaluation1('Very Disatisfied')" required/>
+                <label for="satisfied6" style="display: inline-block">Very Disatisfied</label>
+                <br />
+                <input type="radio" id="satisfied1" name="FacultyEvaluation" value="Extremely Dissatisfied" onclick="SaveFacultyEvaluation1('Extremely Dissatisfied')" required/>
+                <label for="satisfied7" style="display: inline-block">Extremely Dissatisfied</label>
+                <br />
+
+                <h2>Question 4 of 6</h2>
+                <p>
+                    <strong>How positive or negative are your interactions with other members of 6your department?</strong>
+                </p>
+                <br/>
+                <input type="radio" id="Positive1" name="FacultyInteraction" value="Extremely Positive" onclick="SaveFacultyInteraction1('Extremely Positive')" required/>
+                <label for="Positive1" style="display: inline-block">Extremely Positive</label>
+                <br />
+                <input type="radio" id="Positive1" name="FacultyInteraction" value="Slightly Positive" onclick="SaveFacultyInteraction1('Slightly Positive')" required/>
+                <label for="Positive2" style="display: inline-block">Slightly Positive</label>
+                <br />
+                <input type="radio" id="Positive1" name="FacultyInteraction" value="Neither Positive nor Negative" onclick="SaveFacultyInteraction1('Neither Positive nor Negative')" required/>
+                <label for="Positive4" style="display: inline-block">Neither Positive nor Negative</label>
+                <br />
+                <input type="radio" id="Positive1" name="FacultyInteraction" value="Slightly Negative" onclick="SaveFacultyInteraction1('Slightly Negative')" required/>
+                <label for="Positive6" style="display: inline-block">Slightly Negative</label>
+                <br />
+                <input type="radio" id="Positive1" name="FacultyInteraction" value="Extremely Negative" onclick="SaveFacultyInteraction1('Extremely Negative')" required/>
+                <label for="Positive7" style="display: inline-block">Extremely Negative</label>
+                <br />
+
+                <h2>Question 5 of 6</h2>
+                <p>
+                    <strong>How easy or difficult is it to focus on your students' education and wellbeing?</strong>
+                </p>
+                <br/>
+                <input type="radio" id="Easy1" name="FacultyStudentInteraction" value="Extremely Easy" onclick="SaveFacultyStudentInteraction1('Extremely Easy')" required/>
+                <label for="Easy1" style="display: inline-block">Extremely Easy</label>
+                <br />
+                <input type="radio" id="Easy1" name="FacultyStudentInteraction" value="Slightly Easy" onclick="SaveFacultyStudentInteraction1('Slightly Easy')" required/>
+                <label for="Easy2" style="display: inline-block">Slightly Easy</label>
+                <br />
+                <input type="radio" id="Easy1" name="FacultyStudentInteraction" value="Neither Easy nor Difficult" onclick="SaveFacultyStudentInteraction1('Neither Easy nor Difficult')" required/>
+                <label for="Easy4" style="display: inline-block">Neither Easy nor Difficult</label>
+                <br />
+                <input type="radio" id="Easy1" name="FacultyStudentInteraction" value="Slightly Difficult" onclick="SaveFacultyStudentInteraction1('Slightly Difficult')" required/>
+                <label for="Easy6" style="display: inline-block">Slightly Difficult</label>
+                <br />
+                <input type="radio" id="Easy1" name="FacultyStudentInteraction" value="Extremely Difficult" onclick="SaveFacultyStudentInteraction1('Extremely Difficult')" required/>
+                <label for="Easy7" style="display: inline-block">Extremely Difficult</label>
+
+                <h2>Question 6 of 6</h2>
+                <p>
+                    <strong>What would you like to be improved in our university?</strong> 
+                    <br/>
+                    <br/>
+                    Please, describe in few words...
+                </p>
+                <textarea id="comments" class="input-textarea" name="comments" placeholder="Enter your comment here..." onchange="savecomments()"></textarea>
+                <br/>
+            </div>
+        </form>
+        <br/>
+
+        <h1>
+            <a href="FeedbackPage.html" id="Submit" onclick="SaveAction('Submit')">
+                <button class="button">Submit</button>
+            </a>
+        </h1>
+        <br/>
+
+        <script>
+            // Get the department name input field element
+            const DepartmentNameInput = document.getElementById('department-name');
+            // Add an event listener to the input field
+            DepartmentNameInput.addEventListener('input', function() {
+                // Get the entered department name
+                const DepartmentName = DepartmentNameInput.value;
+                // Save the department name in local storage
+                localStorage.setItem('DepartmentName', DepartmentName);
+            });
+
+            function SaveFacultyfacultyRating1(value) {
+                localStorage.setItem('facultyrating', value);
+            }
+            var facultyrating = localStorage.getItem('facultyrating');
+            console.log(facultyrating);
+
+            function SaveFacultyEvaluation1(value) {
+                localStorage.setItem('FacultyEvaluation', value);
+            }
+            var FacultyEvaluation = localStorage.getItem('FacultyEvaluation');
+            console.log(FacultyEvaluation);
+
+            function SaveFacultyInteraction1(value) {
+                localStorage.setItem('FacultyInteraction', value);
+            }
+            var FacultyInteraction = localStorage.getItem('FacultyInteraction');
+            console.log(FacultyInteraction);
+
+            function SaveFacultyStudentInteraction1(value) {
+                localStorage.setItem('FacultyStudentInteraction', value);
+            }   
+            var FacultyStudentInteraction = localStorage.getItem('FacultyStudentInteraction');
+            console.log(FacultyStudentInteraction);
+
+            function savecomments() {
+                var comments = document.getElementById('comments').value;
+                localStorage.setItem('userComments', comments);
+            }
+            var storedComments = localStorage.getItem('userComments');
+            console.log(storedComments);
+
+            //Submit
+            function SaveAction(action) {
+                localStorage.setItem('Submit', action);
+            }
+            var storedAction = localStorage.getItem('Submit');
+            console.log(storedAction);
+        </script>
+    </div>
+</body>
+</html>
